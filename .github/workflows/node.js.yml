@@ -27,3 +27,4 @@ jobs:
     - run: npm install
     - run: npm install -g gulp-cli
     - run: gulp build
+    - run: ./deploy.sh
