@@ -27,4 +27,8 @@ jobs:
     - run: npm install
     - run: npm install -g gulp-cli
     - run: gulp build
-    - run: ./deploy.sh
+    - name: Deploy
+      run: ./deploy.sh
+      env:
+        ALICLOUD_ACCESS_KEY: ${{ secrets.ACCESSKEY }}
+        ALICLOUD_SECRET_KEY: ${{ secrets.SECRETKEY }}
