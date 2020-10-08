@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    @@include("partials/head.html", {
+    "pageTitle": "Landkit"
+    })
+  </head>
+  <body class="bg-light">
+
+    <!-- MODALS
+    ================================================== -->
+    @@include("partials/modals.html")
+
+    <!-- NAVBAR
+    ================================================== -->
+    @@include("partials/navbar.html", {
+    "classList": "navbar-light bg-white",
+    "container": "container-md"
+    })
+
+    <!-- BREADCRUMB
+    ================================================== -->
+    <nav class="bg-dark d-md-none">
+      <div class="container-md">
+        <div class="row align-items-center">
+          <div class="col">
+
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <span class="text-white">
+                  Account
+                </span>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <span class="text-white">
+                  Security
+                </span>
+              </li>
+            </ol>
+
+          </div>
+          <div class="col-auto">
+
+            <!-- Toggler -->
+            <div class="navbar-dark">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenavCollapse" aria-controls="sidenavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </nav>
+
+    <!-- HEADER
+    ================================================== -->
+    <header class="bg-dark pt-9 pb-11 d-none d-md-block">
+      <div class="container-md">
+        <div class="row align-items-center">
+          <div class="col">
+
+            <!-- Heading -->
+            <h1 class="font-weight-bold text-white mb-2">
+              Account Settings
+            </h1>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </header>
+
+    <!-- MAIN
+    ================================================== -->
+    <main class="pb-8 pb-md-11 mt-md-n6">
+      <div class="container-md">
+        <div class="row">
+          <div class="col-12 col-md-3">
+
+            <!-- Card -->
+            <div class="card card-bleed border-bottom border-bottom-md-0 shadow-light-lg">
+
+              <!-- Collapse -->
+              <div class="collapse d-md-block" id="sidenavCollapse">
+                <div class="card-body">
+
+                  <!-- Heading -->
+                  <h6 class="font-weight-bold text-uppercase mb-3">
+                    Account
+                  </h6>
+
+                  <!-- List -->
+                  <ul class="card-list list text-gray-700 mb-6">
+                    <li class="list-item active">
+                      <a class="list-link text-reset" href="account-general.html">
+                        General
+                      </a>
+                  </ul>
+
+                  <!-- Heading -->
+                  <h6 class="font-weight-bold text-uppercase mb-3">
+                    Channel
+                  </h6>
+
+                  <!-- List -->
+                  <ul class="card-list list text-gray-700 mb-0">
+                    <!-- <li class="list-item">
+                      <a class="list-link text-reset" href="billing-plans-and-payment.html">
+                        Email
+                      </a>
+                    </li> -->
+                    <li class="list-item">
+                      <a class="list-link text-reset" href="channel-wechat.html">
+                        WeChat
+                      </a>
+                    </li>
+                  </ul>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-12 col-md-9">
+
+            <!-- Card -->
+            <div class="card card-bleed shadow-light-lg mb-6">
+              <div class="card-body">
+
+                <!-- List group -->
+                <div class="list-group list-group-flush">
+                  <div class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col">
+
+                        <!-- Heading -->
+                        <p class="mb-0">
+                          Access Key
+                        </p>
+
+                        <!-- Text -->
+                        <small id="bytecare-ak" class="text-gray-700">
+                          
+                        </small>
+
+                      </div>
+                      <div class="col-auto">
+
+                        <!-- Button -->
+                        <button class="btn btn-xs btn-outline-white bytecare-copy" data-clipboard-target="#bytecare-ak">
+                          Copy
+                        </button>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col">
+
+                        <!-- Heading -->
+                        <p class="mb-0">
+                          Secret Key
+                        </p>
+
+                        <!-- Text -->
+                        <small id="bytecare-sk" class="text-gray-700">
+                          
+                        </small>
+
+                      </div>
+                      <div class="col-auto">
+
+                        <!-- Button -->
+                        <button class="btn btn-xs btn-outline-white bytecare-copy" data-clipboard-target="#bytecare-sk">
+                          Copy
+                        </button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </main>
+
+    <!-- CURVE
+    ================================================== -->
+    <div class="position-relative">
+      <div class="shape shape-bottom shape-fluid-x svg-shim text-dark">
+        @@include("assets/img/shapes/curves/curve-1.svg")
+      </div>
+    </div>
+
+    <!-- FOOTER
+    ================================================== -->
+    @@include("partials/footer.html", {
+    "classList": "bg-dark"
+    })
+
+    <script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.20.0/axios.min.js"></script>
+    
+    <!-- JAVASCRIPT
+    ================================================== -->
+    @@include("partials/scripts.html")
+    <script>
+      console.log(233);
+
+      new ClipboardJS('.bytecare-copy');
+
+      const token = Cookies.get('token');
+      const headers = {
+        'X-Token': 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJleHAiOjE2MDMyMDExNDAsImlzcyI6ImJ5dGVjYXJlLnh5eiJ9.kpTRW2Obj0iIqlEiKovWeVhhnihTyDpijmbI1fSe1aXpNvCs8oArj5ifk8v1tRn_F4TNJZqbb4IOh50no26H0R1LvzGGJl38Ly03QO0V2FI73E-sYYTkhCB9h-wtwTW1iBow9snT7m1BCi-bLcXLGzJkqyqXaP_iIocpK9Ikp-5xOC9q72MkP26qhjIXctUXVa7lLKOS1xrZ3NQoFwzqXm_dw9yweaQ-IhMdppG3X61VUGR5snBDjxoBf6t48l9SuGZG723nh08MJWI4Iqw0fE0fw7MlkoPZmkX9r1I7oj0vhaTxmmavS_Wjdtd-M6UaIFwix-r3EGBJFf5a-0M5GA'
+      }
+
+      // const axios = require('axios');
+      const instance = axios.create({
+        baseURL: 'https://api.bytecare.xyz/',
+        timeout: 1000,
+        headers
+      });
+
+      instance.request('/view-key', {
+        method: 'POST',
+        // credentials: 'omit',
+      }).then(function (response) {
+        console.log(response.data);
+        $("#bytecare-ak").text(response.data.AccessKey);
+        $("#bytecare-sk").text(response.data.SecretKey);
+      }).catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+
+      // $(document).ready(function(){
+      //     $("#bytecare-ak").text("Hello");
+      // });
+    </script>
+
+  </body>
+</html>
