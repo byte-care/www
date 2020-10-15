@@ -51,7 +51,7 @@
         };
 
         socket.onmessage = function(event) {
-          $("#one").append(`${event.data}<br/>`);
+          $("#one").append(`${event.data}`);
           console.log(`[message] Data received from server: ${event.data}`);
         };
 
