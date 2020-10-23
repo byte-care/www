@@ -1,208 +1,207 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     @@include("partials/head.html", {
     "pageTitle": "Landkit"
     })
-  </head>
-  <body class="bg-light">
+</head>
+<body class="bg-light">
 
-    <!-- MODALS
-    ================================================== -->
-    @@include("partials/modals.html")
+<!-- MODALS
+================================================== -->
+@@include("partials/modals.html")
 
-    <!-- NAVBAR
-    ================================================== -->
-    @@include("partials/navbar.html", {
-    "classList": "navbar-light bg-white",
-    "container": "container-md"
-    })
+<!-- NAVBAR
+================================================== -->
+@@include("partials/navbar.html", {
+"classList": "navbar-light bg-white",
+"container": "container-md"
+})
 
-    <!-- HEADER
-    ================================================== -->
-    <header class="bg-dark pt-9 pb-11 d-none d-md-block">
-      <div class="container-md">
+<!-- HEADER
+================================================== -->
+<header class="bg-dark pt-9 pb-11 d-none d-md-block">
+    <div class="container-md">
         <div class="row align-items-center">
-          <div class="col">
+            <div class="col">
 
-            <!-- Heading -->
-            <h1 class="font-weight-bold text-white mb-2">
-              帐号设置
-            </h1>
+                <!-- Heading -->
+                <h1 class="font-weight-bold text-white mb-2">
+                    帐号设置
+                </h1>
 
-          </div>
+            </div>
         </div> <!-- / .row -->
-      </div> <!-- / .container -->
-    </header>
+    </div> <!-- / .container -->
+</header>
 
-    <!-- MAIN
-    ================================================== -->
-    <main class="pb-8 pb-md-11 mt-md-n6">
-      <div class="container-md">
+<!-- MAIN
+================================================== -->
+<main class="pb-8 pb-md-11 mt-md-n6">
+    <div class="container-md">
         <div class="row">
-          <div class="col-12 col-md-3">
+            <div class="col-12 col-md-3">
 
-            <!-- Card -->
-            <div class="card card-bleed border-bottom border-bottom-md-0 shadow-light-lg">
+                <!-- Card -->
+                <div class="card card-bleed border-bottom border-bottom-md-0 shadow-light-lg">
 
-              <!-- Collapse -->
-              <div class="collapse d-md-block" id="sidenavCollapse">
-                <div class="card-body">
+                    <!-- Collapse -->
+                    <div class="collapse d-md-block" id="sidenavCollapse">
+                        <div class="card-body">
 
-                  <!-- Heading -->
-                  <h6 class="font-weight-bold text-uppercase mb-3">
-                    帐号
-                  </h6>
+                            <!-- Heading -->
+                            <h6 class="font-weight-bold text-uppercase mb-3">
+                                帐号
+                            </h6>
 
-                  <!-- List -->
-                  <ul class="card-list list text-gray-700 mb-6">
-                    <li class="list-item active">
-                      <a class="list-link text-reset" href="account-general.html">
-                        🔐 密钥
-                      </a>
-                  </ul>
+                            <!-- List -->
+                            <ul class="card-list list text-gray-700 mb-6">
+                                <li class="list-item active">
+                                    <a class="list-link text-reset" href="account-general.html">
+                                        🔐 密钥
+                                    </a>
+                            </ul>
 
-                  <!-- Heading -->
-                  <h6 class="font-weight-bold text-uppercase mb-3">
-                    通知方式
-                  </h6>
+                            <!-- Heading -->
+                            <h6 class="font-weight-bold text-uppercase mb-3">
+                                通知方式
+                            </h6>
 
-                  <!-- List -->
-                  <ul class="card-list list text-gray-700 mb-0">
-                    <li class="list-item">
-                      <a class="list-link text-reset" href="channel-wechat.html">
-                        微信
-                      </a>
-                    </li>
-                  </ul>
+                            <!-- List -->
+                            <ul class="card-list list text-gray-700 mb-0">
+                                <li class="list-item">
+                                    <a class="list-link text-reset" href="channel-wechat.html">
+                                        微信
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
 
                 </div>
-              </div>
 
             </div>
+            <div class="col-12 col-md-9">
 
-          </div>
-          <div class="col-12 col-md-9">
+                <!-- Card -->
+                <div class="card card-bleed shadow-light-lg mb-6">
+                    <div class="card-body">
 
-            <!-- Card -->
-            <div class="card card-bleed shadow-light-lg mb-6">
-              <div class="card-body">
+                        <!-- List group -->
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col">
 
-                <!-- List group -->
-                <div class="list-group list-group-flush">
-                  <div class="list-group-item">
-                    <div class="row align-items-center">
-                      <div class="col">
+                                        <!-- Heading -->
+                                        <p class="mb-0">
+                                            Access Key
+                                        </p>
 
-                        <!-- Heading -->
-                        <p class="mb-0">
-                          Access Key
-                        </p>
+                                        <!-- Text -->
+                                        <small id="bytecare-ak" class="text-gray-700">
 
-                        <!-- Text -->
-                        <small id="bytecare-ak" class="text-gray-700">
-                          
-                        </small>
+                                        </small>
 
-                      </div>
-                      <div class="col-auto">
+                                    </div>
+                                    <div class="col-auto">
 
-                        <!-- Button -->
-                        <button class="btn btn-xs btn-outline-white bytecare-copy" data-clipboard-target="#bytecare-ak">
-                          Copy
-                        </button>
+                                        <!-- Button -->
+                                        <button class="btn btn-xs btn-outline-white bytecare-copy"
+                                                data-clipboard-target="#bytecare-ak">
+                                            Copy
+                                        </button>
 
-                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col">
+
+                                        <!-- Heading -->
+                                        <p class="mb-0">
+                                            Secret Key
+                                        </p>
+
+                                        <!-- Text -->
+                                        <small id="bytecare-sk" class="text-gray-700">
+
+                                        </small>
+
+                                    </div>
+                                    <div class="col-auto">
+
+                                        <!-- Button -->
+                                        <button class="btn btn-xs btn-outline-white bytecare-copy"
+                                                data-clipboard-target="#bytecare-sk">
+                                            Copy
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                  </div>
-                  <div class="list-group-item">
-                    <div class="row align-items-center">
-                      <div class="col">
-
-                        <!-- Heading -->
-                        <p class="mb-0">
-                          Secret Key
-                        </p>
-
-                        <!-- Text -->
-                        <small id="bytecare-sk" class="text-gray-700">
-                          
-                        </small>
-
-                      </div>
-                      <div class="col-auto">
-
-                        <!-- Button -->
-                        <button class="btn btn-xs btn-outline-white bytecare-copy" data-clipboard-target="#bytecare-sk">
-                          Copy
-                        </button>
-
-                      </div>
-                    </div>
-                  </div>
                 </div>
 
-              </div>
             </div>
-
-          </div>
         </div> <!-- / .row -->
-      </div> <!-- / .container -->
-    </main>
+    </div> <!-- / .container -->
+</main>
 
-    <!-- CURVE
-    ================================================== -->
-    <div class="position-relative">
-      <div class="shape shape-bottom shape-fluid-x svg-shim text-dark">
+<!-- CURVE
+================================================== -->
+<div class="position-relative">
+    <div class="shape shape-bottom shape-fluid-x svg-shim text-dark">
         @@include("assets/img/shapes/curves/curve-1.svg")
-      </div>
     </div>
+</div>
 
-    <!-- FOOTER
-    ================================================== -->
-    @@include("partials/footer.html", {
-    "classList": "bg-dark"
-    })
+<!-- FOOTER
+================================================== -->
+@@include("partials/footer.html", {
+"classList": "bg-dark"
+})
 
-    <script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
-    <script src="https://cdn.staticfile.org/axios/0.20.0/axios.min.js"></script>
-    
-    <!-- JAVASCRIPT
-    ================================================== -->
-    @@include("partials/scripts.html")
-    <script>
-      console.log(233);
+<script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.20.0/axios.min.js"></script>
 
-      new ClipboardJS('.bytecare-copy');
+<!-- JAVASCRIPT
+================================================== -->
+@@include("partials/scripts.html")
+<script>
+    const token = Cookies.get('token');
+    if (!token) {
+        window.location.href = "https://github.com/login/oauth/authorize?access_type=offline&client_id=5438af48a44fcf64b10f&response_type=code&scope=user%3Aemail";
+    }
 
-      const token = Cookies.get('token');
-      const headers = {
+    new ClipboardJS('.bytecare-copy');
+    const headers = {
         'X-Token': token
-      }
+    }
 
-      // const axios = require('axios');
-      const instance = axios.create({
+    // const axios = require('axios');
+    const instance = axios.create({
         baseURL: 'https://api.bytecare.xyz/',
         timeout: 1000,
         headers
-      });
+    });
 
-      instance.request('/view-key', {
+    instance.request('/view-key', {
         method: 'POST',
         // credentials: 'omit',
-      }).then(function (response) {
+    }).then(function (response) {
         console.log(response.data);
         $("#bytecare-ak").text(response.data.AccessKey);
         $("#bytecare-sk").text(response.data.SecretKey);
-      }).catch(function (error) {
+    }).catch(function (error) {
         // handle error
         console.log(error);
-      })
+    })
+</script>
 
-      // $(document).ready(function(){
-      //     $("#bytecare-ak").text("Hello");
-      // });
-    </script>
-
-  </body>
+</body>
 </html>
