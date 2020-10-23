@@ -142,6 +142,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col">
+
+                                        <!-- Heading -->
+                                        <p class="mb-0">
+                                            Secret Key
+                                        </p>
+
+                                        <!-- Text -->
+                                        <small id="bytecare-key-cmd" class="text-gray-700">
+
+                                        </small>
+
+                                    </div>
+                                    <div class="col-auto">
+
+                                        <!-- Button -->
+                                        <button class="btn btn-xs btn-outline-white bytecare-copy"
+                                                data-clipboard-target="#bytecare-key-cmd">
+                                            Copy
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -195,8 +221,14 @@
         // credentials: 'omit',
     }).then(function (response) {
         console.log(response.data);
-        $("#bytecare-ak").text(response.data.AccessKey);
-        $("#bytecare-sk").text(response.data.SecretKey);
+
+        const accessKey = response.data.AccessKey;
+        const secretKey = response.data.SecretKey;
+
+        $("#bytecare-ak").text(accessKey);
+        $("#bytecare-sk").text(secretKey);
+
+        $("#bytecare-key-cmd").text(`care --access-key=${accessKey} --secret-key=${secretKey}`);
     }).catch(function (error) {
         // handle error
         console.log(error);
