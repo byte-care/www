@@ -1,72 +1,72 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     @@include("partials/head.html", {
     "pageTitle": "ByteCare"
     })
-  </head>
-  <body>
+</head>
+<body>
 
-    <!-- MODALS
-    ================================================== -->
-    @@include("partials/modals.html")
+<!-- MODALS
+================================================== -->
+@@include("partials/modals.html")
 
-    <!-- NAVBAR
-    ================================================== -->
-    @@include("partials/navbar.html", {
-    "classList": "navbar-light bg-white",
-    "container": "container"
-    })
+<!-- NAVBAR
+================================================== -->
+@@include("partials/navbar.html", {
+"classList": "navbar-light bg-white",
+"container": "container"
+})
 
-    <!-- WELCOME
-    ================================================== -->
-    <section>
-      <div class="container" style="background-color: black;color: white;">
+<!-- WELCOME
+================================================== -->
+<section>
+    <div class="container" style="background-color: black;color: white;">
         <div class="row align-items-center">
-          <div class="col-12 col-md-5 col-lg-6 order-md-2">
-            <div id="one"></div>
-          </div>
+            <div class="col-12 col-md-5 col-lg-6 order-md-2">
+                <div id="one" style="padding-bottom: 4px"></div>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- FOOTER
-    ================================================== -->
-    @@include("partials/footer.html")
+<!-- FOOTER
+================================================== -->
+@@include("partials/footer.html")
 
-    <!-- JAVASCRIPT
-    ================================================== -->
-    @@include("partials/scripts.html")
-    <script type = "text/JavaScript">
-      $(document).ready(function(){
+<!-- JAVASCRIPT
+================================================== -->
+@@include("partials/scripts.html")
+<script type="text/JavaScript">
+    $(document).ready(function () {
         const urlParams = new URLSearchParams(window.location.search);
         const myParam = urlParams.get('id');
 
         let socket = new WebSocket(`wss://live.bytecare.xyz/log/sub?id=${myParam}`);
 
-        socket.onopen = function(e) {
-          console.log("[open] Connection established");
-          console.log("Sending to server");
-          socket.send("My name is John");
+        socket.onopen = function (e) {
+            console.log("[open] Connection established");
+            console.log("Sending to server");
+            socket.send("My name is John");
         };
 
-        socket.onmessage = function(event) {
-          $("#one").append(`${event.data.replace(/\n/g, "<br />")}`);
-          console.log(`[message] Data received from server: ${event.data}`);
+        socket.onmessage = function (event) {
+            $("#one").append(`${event.data.replace(/\n/g, "<br />")}`);
+            console.log(`[message] Data received from server: ${event.data}`);
         };
 
-        socket.onclose = function(event) {
-          if (event.wasClean) {
-            console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
-          } else {
-            console.log('[close] Connection died');
-          }
+        socket.onclose = function (event) {
+            if (event.wasClean) {
+                console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+            } else {
+                console.log('[close] Connection died');
+            }
         };
 
-        socket.onerror = function(error) {
-          console.log(`[error] ${error.message}`);
+        socket.onerror = function (error) {
+            console.log(`[error] ${error.message}`);
         };
-      });
-    </script>
-  </body>
+    });
+</script>
+</body>
 </html>
